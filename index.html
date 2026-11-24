@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vercel Test</title>
+  <style>
+    body { font-family: sans-serif; max-width: 500px; margin: 4rem auto; text-align: center; }
+    button { padding: 0.6rem 1.2rem; font-size: 1rem; cursor: pointer; }
+    #out { margin-top: 1.5rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Hallo Vercel 👋</h1>
+  <p>Version 1</p>
+  <button onclick="callApi()">API aufrufen</button>
+  <p id="out"></p>
+
+  <script>
+    async function callApi() {
+      const res = await fetch("/api/hello");
+      const data = await res.json();
+      document.getElementById("out").textContent = data.message + " (" + data.time + ")";
+    }
+  </script>
+</body>
+</html>
